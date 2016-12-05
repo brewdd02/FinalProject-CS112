@@ -41,7 +41,7 @@ function validate()
 	var name = $("txtName").value;
 	var email = $("txtEmail").value;
 	var stuId = $("txtStuId").value;
-	var courses = $("tblCourses").innerHTML;
+	var courses = $("tblCourses").value;
 
 	if (name == "")
 	{
@@ -64,7 +64,15 @@ function validate()
 		return;
 	}
 
-	submitForm(name, email, stuId, courses);
+	var courseArray = [];
+
+	for (var i = 1; i <= numCourses; i++)
+	{
+		courseArray.push($("txtCourseSem"+i).value);
+		courseArray.push($("txtCourseId"+(i)).value);
+	}
+
+	submitForm(name, email, stuId, courseArray);
 }
 
 function submitForm(name, email, stuId, courses)
@@ -88,9 +96,17 @@ function getStorage()
 
 	for (var i = 0; i < numStudents; i++)
 	{
+
 		var student = localStorage.getItem(i.toString());
 		var studentArray = student.split(",");
-		$("tblStorage").innerHTML += "<tr><td>" + studentArray[0] + "</td><td>" + studentArray[1] + "</td><td>" + studentArray[2] + "</td><td>Not implemented</td></tr>"
+		var courses = "";
+
+		for (var i = 3; i < studentArray.length; i++)
+		{
+			courses += studentArray[i] + "<br>";
+		}
+
+		$("tblStorage").innerHTML += "<tr><td>" + studentArray[0] + "</td><td>" + studentArray[1] + "</td><td>" + studentArray[2] + "</td><td>" + courses + "</td></tr>"
 	}
 }
 
