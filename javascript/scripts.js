@@ -18,8 +18,8 @@ function addClass()
 	var colSemester = newRow.insertCell(0);
 	var colCourseId = newRow.insertCell(1);
 
-	colSemester.innerHTML = "<input type='text' id='txtCourseSem" + numCourses + "'>";
-	colCourseId.innerHTML = "<input type='text' id='txtCourseId" + numCourses + "'>";
+	colSemester.innerHTML = "<input type='text' class=\"form-control input-sm\" placeholder=\"Semester\" id='txtCourseSem" + numCourses + "'>";
+	colCourseId.innerHTML = "<input type='text' class=\"form-control input-sm\" placeholder=\"Course ID\" id='txtCourseId" + numCourses + "'>";
 }
 
 function remClass()
@@ -41,7 +41,6 @@ function validate()
 	var name = $("txtName").value;
 	var email = $("txtEmail").value;
 	var stuId = $("txtStuId").value;
-	var courses = $("tblCourses").value;
 
 	if (name == "")
 	{
@@ -101,9 +100,9 @@ function getStorage()
 		var studentArray = student.split(",");
 		var courses = "";
 
-		for (var i = 3; i < studentArray.length; i++)
+		for (var j = 3; i < studentArray.length; i++)
 		{
-			courses += studentArray[i] + "<br>";
+			courses += studentArray[j] + "<br>";
 		}
 
 		$("tblStorage").innerHTML += "<tr><td>" + studentArray[0] + "</td><td>" + studentArray[1] + "</td><td>" + studentArray[2] + "</td><td>" + courses + "</td></tr>"
@@ -135,4 +134,6 @@ function clearStorage()
 	}
 
 	localStorage.setItem("numStudents", 0);
+
+	location.reload();
 }

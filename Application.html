@@ -8,20 +8,17 @@
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 	</head>
 	<body>
-		<fieldset>
+		<fieldset class="form-group">
 			<legend>Your Information</legend>
 			<table style="text-align:right" id="tblInfo">
 				<tr>
-					<td>Name:</td>
-					<td><input type="text" id="txtName"></td>
+					<td><input type="text" class="form-control input-sm" placeholder="Name" id="txtName"></td>
 				<tr>
 				<tr>
-					<td>Email:</td>
-					<td><input type="text" id="txtEmail"></td>
+					<td><input type="text" class="form-control input-sm" placeholder="Email" id="txtEmail"></td>
 				<tr>
 				<tr>
-					<td>Student ID:</td>
-					<td><input type="text" id="txtStuId"></td>
+					<td><input type="text" class="form-control input-sm" placeholder="Student ID" id="txtStuId"></td>
 				<tr>
 			</table>
 		</fieldset>
@@ -34,14 +31,14 @@
 					<th>Course ID</th>
 				</tr>
 				<tr>
-					<td><input type="text" id="txtCourseSem1"></td>
-					<td><input type="text" id="txtCourseId1"></td>
+					<td><input type="text" class="form-control input-sm" placeholder="Semester" id="txtCourseSem1"></td>
+					<td><input type="text" class="form-control input-sm" placeholder="Course ID" id="txtCourseId1"></td>
 				</tr>
 			</table>
-			<input type="button" id="btnAddClass" value="Add another class" onclick="addClass()">
-			<input type="button" id="btnRemClass" value="Remove a class" onclick="remClass()">
+			<input type="button" id="btnAddClass" class="btn btn-success btn-sm" value="Add another class" onclick="addClass()">
+			<input type="button" id="btnRemClass" class="btn btn-success btn-sm" value="Remove a class" onclick="remClass()">
 		</fieldset>
 		<br>
-		<input type="button" id="btnSubmit" value="Submit Form" onclick="validate()">
+		<input type="button" id="btnSubmit" class="btn btn-primary" value="Submit Form" onclick="validate()">
 	</body>
 </html>

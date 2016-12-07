@@ -5,9 +5,10 @@
 		<title>Administrator</title>
 		<script src="javascript/scripts.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
 	</head>
-	<body onload="getStorage()">
-		<table border="1" id="tblStorage">
+	<body id="admin" onload="getStorage()">
+		<table id="tblStorage" class="table table-bordered">
 			<tr>
 				<th>Student ID</th>
 				<th>Name</th>
@@ -16,6 +17,6 @@
 			</tr>
 		</table>
 		<br>
-		<input type="button" id="clear" onclick="clearStorage()" value="Clear Local Storage">
+		<input type="button" id="clear" onclick="clearStorage();" value="Clear Local Storage">
 	</body>
 </html>

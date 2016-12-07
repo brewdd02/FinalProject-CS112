@@ -1,0 +1,16 @@
+body {
+    padding: 10px;
+}
+
+input {
+    margin: 5px;
+}
+
+#admin {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#tblCourses:nth-child(even) {
+    background-color: lightblue;
+}
